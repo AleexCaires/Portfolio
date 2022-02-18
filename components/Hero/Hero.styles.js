@@ -1,5 +1,6 @@
-import styled from "styled-components";
-
+import styled, {keyframes}from "styled-components";
+import { AiOutlineDown } from "react-icons/ai";
+import { FiGithub, FiCodepen, FiLinkedin, FiTwitter} from "react-icons/fi";
 
 export const HeroSection = styled.section`
     flex-direction: column;
@@ -91,4 +92,64 @@ export const HeroWord = styled.p`
     @media only screen and (min-width : 768px) {
         font-size: 22px;
 }
+
 `
+
+export const ScrollButton = styled(AiOutlineDown)`
+    margin: 0 auto;
+    text-align: center;
+    color: ${p => p.theme.color.primaryColor};
+    width: 40px;
+    height: 45px;
+`
+
+export const Sidebar = styled.div`
+    width: 100px;
+    bottom: 0;
+    margin-left: auto;
+    color: ${p => p.theme.color.primaryColor};
+
+    @media only screen and (max-width : 4768px) {
+        display: none;
+}
+`
+
+export const SidebarIcons = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+
+    span{
+        border: 1px solid  ${p => p.theme.color.primaryColor} ;
+        height: 150px;
+    }
+`
+
+export const GitIcon  = styled(FiGithub)`
+    width: 25px;
+    height: 25px;
+    margin-bottom: 15px;
+    cursor:pointer;
+`   
+export const CodePenIcon  = styled(FiCodepen)`
+    width: 25px;
+    height: 25px;
+    margin-bottom: 15px;
+    cursor:pointer;
+`  
+export const LinkedInIcon  = styled(FiLinkedin)`
+    width: 25px;
+    height: 25px;
+    margin-bottom: 15px;
+    cursor:pointer;
+`  
+export const TwitterIcon  = styled(FiTwitter)`
+    width: 25px;
+    height: 25px;
+    margin-bottom: 15px;
+    cursor:pointer;
+`  
+
