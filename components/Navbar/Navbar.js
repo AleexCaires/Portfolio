@@ -15,7 +15,6 @@ import {
   NavBtn,
   NavBtnLink,
   
-
 } from './Navbar.styles';
 
 import Link from 'next/link';
@@ -30,18 +29,25 @@ const MobileNav = () => {
 
   return(
     <>
-        <IconWrapper>
-          <Icon></Icon>
-        </IconWrapper>
-      <Hamburger onClick={handleNav} className={clsx(navOpen ? 'colapse-spin' : ' ')}>
-        <div className='inner'>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </Hamburger>
-      <MobileMenu className={clsx(navOpen ? 'open' : '')}>
-      </MobileMenu>
+    <Nav>
+      <NavbarContainer>
+      <IconWrapper>
+      <Link href="/." passHref>
+            <Icon></Icon>
+          </Link>
+      </IconWrapper>
+      <NavMenu>
+        <Hamburger onClick={handleNav} className={clsx(navOpen ? 'colapse-spin' : ' ')}>
+          <div className='inner'>
+              <span></span>
+              <span></span>
+              <span></span>
+          </div>
+        </Hamburger>
+        <MobileMenu className={clsx(navOpen ? 'open' : '')}></MobileMenu> 
+      </NavMenu>
+      </NavbarContainer>
+    </Nav>
     </>
   );
 }
@@ -77,10 +83,10 @@ const DesktopNav = () => {
             <NavLinks><span>4.</span>Contact</NavLinks>
           </Link>
           </NavItem>
-        </NavMenu>
-        <NavBtn>
+          <NavBtn>
             <NavBtnLink to='/signin'>Resume</NavBtnLink>
           </NavBtn>
+        </NavMenu>      
       </NavbarContainer>
     </Nav>
     </>
