@@ -13,6 +13,7 @@ function MyApp({ Component, pageProps }) {
       <Layout>
         <Component {...pageProps} /> 
         <Hero />
+        
       </Layout>
     </ThemeProvider>
     </>
