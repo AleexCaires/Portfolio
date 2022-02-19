@@ -23,7 +23,7 @@ const animation = keyframes`
     align-items: center;
     height: 100%;
     margin-top: 50px;
-    animation: ${animation} 2s linear infinite;
+    animation: ${animation} 3s linear infinite;
 `
 
 
@@ -60,6 +60,7 @@ const Hero = () => {
             <ScrollDownButton>
                 <ScrollButton />
             </ScrollDownButton>
+            
     </HeroSection>
     </>
   )
