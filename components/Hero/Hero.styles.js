@@ -97,6 +97,8 @@ export const HeroWord = styled.p`
 
 export const ScrollButton = styled(AiOutlineDown)`
     margin: 0 auto;
+    display: flex;
+    flex-direction: row;
     text-align: center;
     color: ${p => p.theme.color.primaryColor};
     width: 40px;
@@ -107,9 +109,11 @@ export const Sidebar = styled.div`
     width: 100px;
     bottom: 0;
     margin-left: auto;
+    flex-direction: column;
+    align-items: flex-start;
     color: ${p => p.theme.color.primaryColor};
 
-    @media only screen and (max-width : 4768px) {
+    @media only screen and (max-width : 768px) {
         display: none;
 }
 `
