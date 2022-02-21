@@ -1,4 +1,5 @@
 import {breakpoints} from './breakpoints';
+import { css } from 'styled-components';
 
 export const theme = {
     color: {
@@ -7,7 +8,8 @@ export const theme = {
         primaryColor: '#FF5252',
         secondaryColor: '#851E3E',
     },
-    breakpoints: {
-        breakpoints,
-    }
+    sizing: {
+        maxWidth: '1440px',
+    },
+    breakpoints,
 }
