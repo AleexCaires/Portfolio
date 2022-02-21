@@ -1,32 +1,49 @@
 import styled, {keyframes}from "styled-components";
+import { transparentize } from "polished";
 import { AiOutlineDown } from "react-icons/ai";
-import { FiGithub, FiCodepen, FiLinkedin, FiTwitter} from "react-icons/fi";
+import { 
+        FiGithub, 
+        FiCodepen, 
+        FiLinkedin, 
+        FiTwitter
+} from "react-icons/fi";
+import { Container } from "../Container/Container";
+import { breakpoints } from "../../theme/breakpoints";
+import media from "styled-media-query";
+
+export const animation = keyframes`
+
+0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+
+`
 
 export const HeroSection = styled.section`
     flex-direction: column;
     align-items: flex-start;
-    min-height: 100vh;
-    padding: 0;
-    background-image: url('/background.jpg');
+    padding: 50px 0;
+    background-image: linear-gradient(0deg, ${p=>p.theme.color.mainBG} 0%, ${p=>transparentize(1, p.theme.color.mainBG)} 50%),
+                                url('/background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     box-shadow: inset 0 0 0 1000px rgba(37,30,62,0.91);
     opacity: 0.9;
 `
-export const HeroContent = styled.div`
+export const HeroContent = styled(Container)`
     display: flex;
-    flex-direction: row;
-    
+    padding-top: 0 !important;
 `
 
 export const HeroLine = styled.div`
-border-left: 1px solid ${p => p.theme.color.primaryColor};
-margin: 30px 20px 20px 20px;
-@media only screen and (min-width : 992px) {
-    margin: 30px 20px 20px 120px;
-}
-
-
+    border-left: 1px solid ${p => p.theme.color.primaryColor};
+    margin: 0 20px;
 `
 export const HeroText = styled.div`
     display: flex;
@@ -103,6 +120,7 @@ export const ScrollButton = styled(AiOutlineDown)`
     color: ${p => p.theme.color.primaryColor};
     width: 40px;
     height: 45px;
+    cursor: pointer;
 `
 
 export const Sidebar = styled.div`
@@ -154,6 +172,18 @@ export const TwitterIcon  = styled(FiTwitter)`
     width: 25px;
     height: 25px;
     margin-bottom: 15px;
-    cursor:pointer;
+    cursor: pointer;
 `  
 
+export const ScrollDownButton = styled.div`
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-top: 50px;
+    animation: ${animation} 3s linear infinite;
+
+    ${media.greaterThan(breakpoints.small())`
+        margin-top: -50px;
+    `}
+
+`
