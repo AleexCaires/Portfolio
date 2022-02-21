@@ -32,9 +32,9 @@ const MobileNav = () => {
     <Nav>
       <NavbarContainer>
       <IconWrapper>
-      <Link href="/." passHref>
+      <Link href="/#Home" passHref>
             <Icon></Icon>
-          </Link>
+      </Link>
       </IconWrapper>
       <NavMenu>
         <Hamburger onClick={handleNav} className={clsx(navOpen ? 'colapse-spin' : ' ')}>
@@ -58,28 +58,28 @@ const DesktopNav = () => {
     <Nav>
       <NavbarContainer>
         <IconWrapper>
-        <Link href="/." passHref>
+        <Link href="/#Home" passHref>
             <Icon></Icon>
-          </Link>
+        </Link>
         </IconWrapper>
         <NavMenu>
           <NavItem>
-          <Link href="/login" passHref>
+          <Link href="/#About" passHref>
             <NavLinks><span>1.</span>About</NavLinks>
           </Link>
           </NavItem>
           <NavItem>
-          <Link href="/login" passHref>
+          <Link href="/#Experience" passHref>
             <NavLinks><span>2.</span>Experience</NavLinks>
           </Link>
           </NavItem>
           <NavItem>
-          <Link href="/login" passHref>
+          <Link href="/#Projects" passHref>
             <NavLinks><span>3.</span>Projects</NavLinks>
           </Link>
           </NavItem>
           <NavItem>
-          <Link href="/login" passHref>
+          <Link href="/#Contact" passHref>
             <NavLinks><span>4.</span>Contact</NavLinks>
           </Link>
           </NavItem>

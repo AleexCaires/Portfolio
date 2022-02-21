@@ -1,10 +1,14 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
+import { darken } from 'polished';
 import LogoIcon from '../Logo/LogoIcon';
 
 
 export const Nav = styled.nav`
-    background: rgba(0, 0 , 0 , 0.1);
+    position: sticky;
+    top: 0;
+    background: ${p => darken(0.01, p.theme.color.mainBG)};
     height: 40px;
+    z-index: 9;
 
     @media (min-width: 768px) {
     height: 60px;
