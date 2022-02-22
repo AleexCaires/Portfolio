@@ -3,9 +3,9 @@ import { breakpoints } from '../../theme/breakpoints'
 import media from "styled-media-query"
 
 export const Title = styled.p`
-font-size: 42px;
-border-bottom: 1px solid ${p => p.theme.color.primaryColor};
-color: #fff;
+  font-size: 42px;
+  border-bottom: 1px solid ${p => p.theme.color.primaryColor};
+  color: #fff;
 
 span{
     color: ${p => p.theme.color.primaryColor};
@@ -25,7 +25,7 @@ export const Text = styled.div`
   line-height: 1.8;
   font-size: 16px;
   margin-right: 30px;
-  font-weight: lighter;
+  font-weight: 300;
 
   ${media.greaterThan(breakpoints.large())`
         font-size: 22px
