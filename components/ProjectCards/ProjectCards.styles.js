@@ -16,10 +16,10 @@ export const Cards = styled.div`
         }
     }
     
-    ${media.greaterThan(breakpoints.large())`
+    ${media.greaterThan(breakpoints.small())`
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-gap: 1rem;
+        grid-gap: 2rem;
         margin-bottom: 60px;
 
         div {
@@ -27,9 +27,9 @@ export const Cards = styled.div`
         }
     `}
 
-    ${media.greaterThan(breakpoints.xlarge())`
+    ${media.greaterThan(breakpoints.large())`
         grid-template-columns: repeat(3, 1fr);
-        grid-gap: 1rem;
+        grid-gap: 2rem;
     `}
 `
 
@@ -50,9 +50,10 @@ export const FeaturedImg = styled.div`
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     transition: height 0.4s ease-in-out;
+    opacity: 0.4;
 
     &.hover {
-        height: 240px;
+        height: 140px;
     }
 `
 
@@ -91,21 +92,24 @@ export const StyledDescription = styled.div`
     transition: height 0.4s ease-in-out;
     overflow: hidden;
 
-    &.hover {
-        height: 0;
-    }
-
     ${media.greaterThan(breakpoints.large())`
-        text-align: center;
+       // text-align: center;
     `}
 
 `
 export const CardFooter = styled.div`
     display: flex;
-    justify-content: flex-start;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
     color: ${p => p.theme.color.primaryColor};
     align-items: center;
     margin-top: 30px;
+
+    ${media.greaterThan(breakpoints.small())`
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    `}
 `
 
 export const StyledTag = styled.div`
@@ -117,7 +121,7 @@ export const StyledTag = styled.div`
 `
 
 export const LiveLink = styled.a`
-    margin-left: auto;
+    flex-basis: 100%;
     text-align: center;
     width: 30px;
     width: auto;
@@ -128,5 +132,10 @@ export const LiveLink = styled.a`
         width: auto;
         height: auto;
     }
+
+    ${media.greaterThan(breakpoints.small())`
+        flex-basis: auto;
+        margin-left: auto;
+    `}
 `
 

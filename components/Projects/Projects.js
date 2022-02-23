@@ -5,14 +5,14 @@ import { Btn, BtnInfo } from '../Button/Button.styles';
 import { Card } from '../ProjectCards/Card'
 import { CardsContainer } from '../ProjectCards/CardsContainer'
 
-const Projects = () => {
+export default function Projects() {
 
   const CardsData = [
     {
       title : 'FreeHand',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Odio facilisis mauris sit amet. Massa sed elementum tempus egestas sed sed risus pretium..',
+      description: 'FreeHand is a Single Page Application, that was build with the purpose of learning how to build an SPA from scratch, with responsiveness in mind.',
       featuredImage: 'url("/work.jpeg")',
-      tags: ['React', 'Css'],
+      tags: ['React', 'Styled Components'],
       url: {
         live: 'https://free-hand.vercel.app/',
         github: 'https://github.com/AleexCaires/FreeHand',
@@ -20,22 +20,22 @@ const Projects = () => {
     },
     {
       title : 'QuizGame',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Odio facilisis mauris sit amet. Massa sed elementum tempus egestas sed sed risus pretium..',
-      featuredImage: 'url("/work.jpeg")',
-      tags: ['React', 'Css'],
+      description: 'Quiz Game is a simple Quiz create with React and Typescript, all questions and answers are implemented from Trivia API as a data source.',
+      featuredImage: 'url("/QuizGame.png")',
+      tags: ['React', 'Typescript', 'Styled Components'],
       url: {
-        live: 'https://free-hand.vercel.app/',
-        github: 'https://github.com/AleexCaires/FreeHand',
+        live: 'https://jogo-da-perguntinha.vercel.app/',
+        github: 'https://github.com/AleexCaires/Quiz-Game',
       }
     },
     {
       title : 'PX2REM',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Odio facilisis mauris sit amet. Massa sed elementum tempus egestas sed sed risus pretium..',
-      featuredImage: 'url("/work.jpeg")',
-      tags: ['React', 'Css'],
+      description: 'PX2REM is a simple application that converts points, pixels, percentage and rem interchangeably with a simple and clean interface.',
+      featuredImage: 'url("/px2rem_social.png")',
+      tags: ['React', 'Typescript', 'Electron'],
       url: {
-        live: 'https://free-hand.vercel.app/',
-        github: 'https://github.com/AleexCaires/FreeHand',
+        live: 'https://mario-duarte.github.io/PX2Rem/',
+        github: 'https://github.com/Mario-Duarte/PX2Rem',
       }
     },
     
@@ -48,7 +48,7 @@ const Projects = () => {
   //   setViewCards(viewCards+6)
   // }
 
-  return (
+  return(
     <Container id="Projects">
         <Headings number="3" heading="Projects" />
         <CardsContainer>
@@ -74,5 +74,3 @@ const Projects = () => {
     </Container>
   )
 }
-
-export default Projects
