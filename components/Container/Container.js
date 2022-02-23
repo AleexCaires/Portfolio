@@ -8,11 +8,11 @@ export const Container = styled.section`
     margin: 0 auto;
     padding: 30px 20px;
 
-    ${media.greaterThan(breakpoints.large())`
-        padding: 40px 20px;
-  `}
+    ${media.greaterThan(breakpoints.small())`
+        padding: 60px 20px;
+    `}
 
-    ${media.greaterThan(breakpoints.xlarge())`
-        padding: 60px 40px;
+    ${media.greaterThan(breakpoints.large())`
+        padding: 120px 40px;
     `}
 `

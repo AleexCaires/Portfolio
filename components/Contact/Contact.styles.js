@@ -15,7 +15,7 @@ span{
 
 export const ContactWrapper = styled.div`
  
- ${media.greaterThan(breakpoints.large())`
+ ${media.greaterThan(breakpoints.small())`
         text-align: center;
   `}
 `
@@ -27,15 +27,15 @@ export const Text = styled.div`
   margin-right: 30px;
   font-weight: 300;
 
-  ${media.greaterThan(breakpoints.large())`
+  ${media.greaterThan(breakpoints.small())`
         font-size: 22px
   `}
 
   p:first-child {
     font-size: 26px;
 
-    ${media.greaterThan(breakpoints.large())`
-        font-size: 26
+    ${media.greaterThan(breakpoints.small())`
+        font-size: 28px;
   `}
   }
   p:last-child {
