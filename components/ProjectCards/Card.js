@@ -31,23 +31,26 @@ export function Card({
 
     const [ref, bounds] = useMeasure()
     const [active, setActive] = useState(false);
-    const [descriptionHeight, setDescriptionHeight] = useState();
-
-    console.log(descriptionHeight);
+    const [descriptionHeight, setDescriptionHeight] = useState('auto');
+    const [descriptionOHeight, setDescriptionOHeight] = useState();
 
     const handleMouseIn = (e) => {
+        setDescriptionOHeight(bounds.height + 'px');
         setActive(true);
+        setDescriptionHeight('0px');
     }
 
     const handleMouseOut = (e) => {
         setActive(false);
+        setDescriptionHeight(descriptionOHeight);
     }
 
-    useEffect(()=>{
-        setDescriptionHeight(bounds.height);
-        console.log(bounds.height);
-        console.log(descriptionHeight);
-    }, []);
+    useEffect(() => {
+        const handleResize = (e) => {
+            setDescriptionOHeight(bounds.height + 'px');
+        }
+        window.addEventListener('resize', handleResize);
+    })
 
     return(
         <StyledCard onMouseEnter={handleMouseIn} onMouseLeave={handleMouseOut}>
@@ -60,7 +63,7 @@ export function Card({
                     }
                 </CardHeader>
                 {Description &&
-                    <StyledDescription ref={ref} className={clsx(active ? 'hover' : '')} containerHeight={clsx(descriptionHeight ? descriptionHeight+'px' : '')}>
+                    <StyledDescription ref={ref} className={clsx(active ? 'hover' : '')} style={{height: descriptionHeight}}>
                         {Description}
                     </StyledDescription>
                 }
@@ -68,7 +71,7 @@ export function Card({
                     {Tags && Tags.map(Tag =>
                         <StyledTag key={Tag}>{Tag}</StyledTag>
                     )}
-                    <LiveLink>View Live <FaArrowRight /></LiveLink>
+                    <LiveLink target="_blank" href={LiveUrl} rel="noopener noreferrer">View Live <FaArrowRight /></LiveLink>
                 </CardFooter>
             </CardInner>
         </StyledCard>
