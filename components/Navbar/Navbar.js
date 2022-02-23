@@ -19,7 +19,8 @@ import {
 
 import Link from 'next/link';
 
-const MobileNav = () => {
+
+export function MobileNav() {
 
   const [navOpen, setNavOpen] = useState(false);
 
@@ -52,7 +53,7 @@ const MobileNav = () => {
   );
 }
 
-const DesktopNav = () => {
+export function DesktopNav() {
   return(
     <>
     <Nav>
@@ -93,11 +94,11 @@ const DesktopNav = () => {
   );
 }
 
-const Navbar = () => {
+export default function Navbar()  {
 
   const matchesMobile = useMediaQuery(`(max-width: ${breakpoints.sm}px)`);
 
-  return (
+  return(
     <>
         <Nav>
           {matchesMobile &&
@@ -110,5 +111,3 @@ const Navbar = () => {
     </>
   )
 }
-
-export default Navbar

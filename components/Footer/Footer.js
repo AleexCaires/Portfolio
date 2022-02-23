@@ -1,8 +1,8 @@
 import React from 'react'
 import { FooterWrapper, FooterText } from './Footer.styles'
 
-const Footer = () => {
-  return (
+export default function Footer() {
+  return(
     <>
       <FooterWrapper>
         <FooterText>
@@ -13,5 +13,3 @@ const Footer = () => {
     </>
   )
 }
-
-export default Footer

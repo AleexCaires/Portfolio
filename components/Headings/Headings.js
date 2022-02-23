@@ -11,5 +11,5 @@ export function Headings({heading, number, position="left"}) {
             <Index>{number}.</Index> {heading}
         </HeadingContainer>
     )
-
 }
+
