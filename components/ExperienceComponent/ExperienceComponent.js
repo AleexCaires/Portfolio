@@ -69,7 +69,7 @@ export function ExperienceDesktop({data}) {
     )
 }
 
-function ContentComponent({position, company, date, description, active}) {
+function ContentComponent({position, company, date, description, active, }, ) {
   
   const [height, setHeight] = useState('auto');
 
@@ -86,6 +86,7 @@ function ContentComponent({position, company, date, description, active}) {
       <h1>{position} @ <span>{company}</span></h1>
       <p>{date}</p>
       <p>{description}</p>
+      
     </Content>
   )
 }
