@@ -15,14 +15,16 @@ export default function Experience() {
       position: 'Freelancer Front-End Developer',
       company: 'Astrazeneca',
       date: 'Sep 2021 - Present',
-      description: `I am currently in a Freelance Role, where I do web support and general Ui Updates to the 'myMove' application. 
+      description: `I am currently in a Freelance Role, where I do web support and general Ui Updates to the application. 
       Also worked with a team of developers to build new features and provide support in adding interactive SVG maps to one of their web apps used by thousands of users. `,
     },
     {
       position: 'Freelancer Front-End Developer',
       company: 'RenderMedia',
       date: 'May 2021 - ',
-      description: `Worked in a project where I had to create a simple download page `,
+      description: `To help with the launch of the client new product I was encharged with the creation of a highly engadging, mobile first, 
+      marketing page that highlighted the new product and helped with the conversion rate driving new users to download and use the software.
+      This page was built in harmony with their existing Wordpress Theme and branding guidelines, with the use of ACF to create a easy to use admin interface.   `,
     },
     {
       position: 'Freelancer Front-End Developer',
