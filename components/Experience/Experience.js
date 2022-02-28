@@ -22,7 +22,7 @@ export default function Experience() {
       position: 'Freelancer Front-End Developer',
       company: 'RenderMedia',
       date: 'May 2021 - ',
-      description: `To help with the launch of the client new product I was encharged with the creation of a highly engadging, mobile first, 
+      description: `To help with the launch of the client new product where I was in charge of creating a highly engadging, mobile first, 
       marketing page that highlighted the new product and helped with the conversion rate driving new users to download and use the software.
       This page was built in harmony with their existing Wordpress Theme and branding guidelines, with the use of ACF to create a easy to use admin interface.   `,
     },
