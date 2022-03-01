@@ -10,6 +10,8 @@ import {
 } from './About.styles'
 import { Links } from '../Links/Links'
 
+const getAge = birthDate => Math.floor((new Date() - new Date(birthDate).getTime()) / 3.15576e+10)
+
 export default function About() {
     return(
         <AboutSection id="About">
@@ -20,7 +22,7 @@ export default function About() {
                         <div style={{backgroundImage: 'url("/portrait.jpg")'}}></div>
                     </Octagon>
                     <Text>
-                        <p>Hello, <br></br>I am Tiago Caires, a 23 years old Freelance Web Developer.
+                        <p>Hello, <br></br>I am Tiago Caires, a {getAge('1998-02-16')} years old Freelance Web Developer.
                         Originally from Madeira island, Portugal where I study Science and Technology to the vibrant city of London, United Kingdom where I started my career of Web development  in 2018.
                         </p>
                         <p>With over 3 years of experience in a wide range of sectors from agency world, pharmaceutical, retail, finTech, and many others as a freelance contractor working from web banners and email campaigns to SPA&apos;s and WPA&apos;s expanding my experience and refining my knowledge in the field.</p>
