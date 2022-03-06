@@ -17,8 +17,8 @@ export function ExperienceMobile({data}) {
   }
 
   return(
-    <ExperienceContainer position="right">
-        <ul position="right">
+    <ExperienceContainer>
+        <ul>
         {data.map((item, index) =>
           <li key={index} className="company" onClick={() => handleExpandClick(item.company)}>
             {item.company}
