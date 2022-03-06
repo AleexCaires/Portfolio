@@ -6,17 +6,62 @@ export const ExperienceContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    align-items: end;
 
     ${media.greaterThan(breakpoints.small())`
         flex-direction: row;
         align-items: flex-start;
         justify-content: space-between;
+
+
     `}
 
     ${media.greaterThan(breakpoints.xlarge())`
         
     `}
+
+    ul{
+        color: white;
+    }
+
+    .company{
+        list-style: none;
+        cursor: pointer;
+        padding: 15px;
+        background: ${p => p.theme.color.secondaryBG};
+        text-align: end;
+        
+
+        .content {
+            color: white;
+            transition: 0.4s;
+            
+
+            span{
+                color: ${p => p.theme.color.primaryColor};
+            }
+
+            p{
+                
+            }
+            p:first-of-type{
+                font-size: 12px;
+                margin-top: -10px;
+                font-weight: 300;
+            }
+
+            &.open {
+        opacity: 1;
+        }
+
+        &.closed {
+            opacity: 0;
+            display: none;
+  overflow: hidden;
+
+        }
+            }
+    }
 `
 
 export const Tabs = styled.ul`
