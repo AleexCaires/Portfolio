@@ -17,13 +17,13 @@ export function ExperienceMobile({data}) {
   }
 
   return(
-    <ExperienceContainer>
-        <ul>
+    <ExperienceContainer position="right">
+        <ul position="right">
         {data.map((item, index) =>
           <li key={index} className="company" onClick={() => handleExpandClick(item.company)}>
             {item.company}
             <div className={clsx('content', item.company === expanded ? 'open' : 'closed')}>
-              <h1>{item.position} @ {item.company}</h1>
+              <h1>{item.position} @ <span>{item.company}</span></h1>
               <p>{item.date}</p>
               <p>{item.description}</p>
             </div>
@@ -88,5 +88,6 @@ function ContentComponent({position, company, date, description, active, }, ) {
       <p>{description}</p>
       
     </Content>
+
   )
 }
