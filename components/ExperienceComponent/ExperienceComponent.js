@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import useMeasure from 'react-use-measure'
 import clsx from "clsx";
 import {
+  FaArrowDown,
+} from 'react-icons/fa'
+import {
   ExperienceContainer,
   Tabs,
   ContentContainer,
@@ -21,6 +24,7 @@ export function ExperienceMobile({data}) {
         <ul>
         {data.map((item, index) =>
           <li key={index} className="company" onClick={() => handleExpandClick(item.company)}>
+            <FaArrowDown />
             {item.company}
             <div className={clsx('content', item.company === expanded ? 'open' : 'closed')}>
               <h1>{item.position} @ <span>{item.company}</span></h1>
