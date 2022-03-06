@@ -5,7 +5,6 @@ import { breakpoints } from '../../theme/breakpoints'
 export const ExperienceContainer = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
     align-items: end;
 
     ${media.greaterThan(breakpoints.small())`
@@ -21,8 +20,10 @@ export const ExperienceContainer = styled.div`
     `}
 
     ul{
-        color: white;
-    }
+    color: white;
+}
+
+
 
     .company{
         list-style: none;
@@ -30,6 +31,7 @@ export const ExperienceContainer = styled.div`
         padding: 15px;
         background: ${p => p.theme.color.secondaryBG};
         text-align: end;
+        width: 100%;
         
 
         .content {
