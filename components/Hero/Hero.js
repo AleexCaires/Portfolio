@@ -42,7 +42,7 @@ export default function Hero() {
                     <HeroTitle>Hi, my name is</HeroTitle>
                     <HeroName>Tiago Caires</HeroName>
                     <HeroDescription>I build things in a machine to be used by humans.</HeroDescription>
-                    <HeroWord>I'm a frontend develop that specializes in the design and build of exceptional digital experiences.</HeroWord>
+                    <HeroWord>I am a frontend develop that specializes in the design and build of exceptional digital experiences.</HeroWord>
                 </HeroText>
                 </HeroContent>
                 <Sidebar>
