@@ -41,12 +41,12 @@ export default function Projects() {
     
   ];
 
-  // const [cards, setCards] = useState(CardsData.length);
-  // const [viewCards, setViewCards] = useState(6);
+  const [cards, setCards] = useState(CardsData.length);
+  const [viewCards, setViewCards] = useState(6);
 
-  // const handleShowMore = () => {
-  //   setViewCards(viewCards+6)
-  // }
+  const handleShowMore = () => {
+    setViewCards(viewCards+6)
+  }
 
   return(
     <Container id="Projects">
@@ -65,11 +65,11 @@ export default function Projects() {
           )}
         </CardsContainer>
 
-        {/* { cards > viewCards &&
+        { cards > viewCards &&
           <Btn>
             <BtnInfo to='' onClick={handleShowMore}>Show More</BtnInfo>
           </Btn>
-        } */}
+        }
         
     </Container>
   )
