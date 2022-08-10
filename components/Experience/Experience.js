@@ -12,6 +12,12 @@ export default function Experience() {
 
   const ExperienceData = [
     {
+      position: 'Junior Frontend Developer',
+      company: 'Conversio',
+      date: 'March 2022 - Present',
+      description: `Currently working as a Junior Frontend Feveloper at Conversio.`,
+    },
+    {
       position: 'Freelancer Front-End Developer',
       company: 'Astrazeneca',
       date: 'Sep 2021 - Present',
