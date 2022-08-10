@@ -26,7 +26,7 @@ export const BtnInfo = styled.a`
     &:hover {
         transition: all 0.2s ease-in-out;
         background: ${p => p.theme.color.secondaryColor};
-        color: #251E3E;
+        color: #fff;
     }
 
     ${media.greaterThan(breakpoints.large())`
