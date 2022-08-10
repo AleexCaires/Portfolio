@@ -54,6 +54,11 @@ export function MobileNav() {
 }
 
 export function DesktopNav() {
+  let count = 0;
+  const handleClick = (e) => {
+  count === 0 ? count++ : e.preventDefault();
+  }
+
   return(
     <>
     <Nav>
@@ -84,8 +89,9 @@ export function DesktopNav() {
             <NavLinks><span>4.</span>Contact</NavLinks>
           </Link>
           </NavItem>
-          <NavBtn>
-            <NavBtnLink to='/signin'>Resume</NavBtnLink>
+          <NavBtn>  
+             {/* Add the Resume download in the public files and target it with "href path"  */}    
+            <NavBtnLink onClick={handleClick} href='/background.jpg' download>Resume</NavBtnLink>
           </NavBtn>
         </NavMenu>      
       </NavbarContainer>
