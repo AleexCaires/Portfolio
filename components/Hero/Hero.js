@@ -27,7 +27,7 @@ import {
 } from './Hero.styles'
 
 export default function Hero() {
-
+    
     const router = useRouter();
     const handleClickDown = () => {
         router.push('./#About');
