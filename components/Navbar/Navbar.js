@@ -18,6 +18,7 @@ import {
 } from './Navbar.styles';
 
 import Link from 'next/link';
+import { useRouter } from 'next/router'
 
 
 export function MobileNav() {
@@ -27,12 +28,13 @@ export function MobileNav() {
   const handleNav = () => {
     setNavOpen(!navOpen);
   }
+  
 
   return(
     <>
     <Nav>
       <NavbarContainer>
-      <IconWrapper>
+      <IconWrapper >
       <Link href="/#Home" passHref>
             <Icon></Icon>
       </Link>
@@ -59,11 +61,16 @@ export function DesktopNav() {
   count === 0 ? count++ : e.preventDefault();
   }
 
+  const router = useRouter();
+    const handleClickDown = () => {
+        router.push('./#Home');
+    }
+
   return(
     <>
     <Nav>
       <NavbarContainer>
-        <IconWrapper>
+        <IconWrapper onClick={handleClickDown}>
         <Link href="/#Home" passHref>
             <Icon></Icon>
         </Link>
