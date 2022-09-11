@@ -28,13 +28,18 @@ export function MobileNav() {
   const handleNav = () => {
     setNavOpen(!navOpen);
   }
+
+  const router = useRouter();
+    const handleClickDown = () => {
+        router.push('./#Home');
+    }
   
 
   return(
     <>
     <Nav>
       <NavbarContainer>
-      <IconWrapper >
+      <IconWrapper onClick={handleClickDown}>
       <Link href="/#Home" passHref>
             <Icon></Icon>
       </Link>
