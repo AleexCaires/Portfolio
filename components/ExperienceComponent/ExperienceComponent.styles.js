@@ -54,6 +54,7 @@ export const ExperienceContainer = styled.div`
 
             &.open {
         opacity: 1;
+        border-bottom: 1px solid ${p => p.theme.color.primaryColor};
         }
 
         &.closed {
