@@ -1,11 +1,5 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import { 
-    FiGithub, 
-    FiCodepen,
-    FiLinkedin,
-    FiTwitter
-} from "react-icons/fi";
 import Link from 'next/link';
 import { 
     HeroSection, 
