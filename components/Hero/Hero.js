@@ -65,7 +65,6 @@ export default function Hero() {
                 <ScrollDownButton>
                     <ScrollButton onClick={handleClickDown} />
                 </ScrollDownButton>
-                
         </HeroSection>
     </>
     )
