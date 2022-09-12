@@ -27,7 +27,7 @@ export default function Experience() {
     {
       position: 'Freelancer Front-End Developer',
       company: 'RenderMedia',
-      date: 'May 2021 - ',
+      date: 'May 2021  ',
       description: `To help with the launch of the client new product where I was in charge of creating a highly engadging, mobile first, 
       marketing page that highlighted the new product and helped with the conversion rate driving new users to download and use the software.
       This page was built in harmony with their existing Wordpress Theme and branding guidelines, with the use of ACF to create a easy to use admin interface.   `,
@@ -35,7 +35,7 @@ export default function Experience() {
     {
       position: 'Freelancer Front-End Developer',
       company: 'Caffe Nero',
-      date: 'March 2021 - ',
+      date: 'March 2021',
       description: `Worked in a project, where I had to create a Wordpress page template that, loaded a JSON File, selected the correct menu which is language specific,
       displayed all the items in a responsive grid layout, primarily using PHP, Wordpress, ACF, JavaScript(ES6) and SASS/CSS.
        `,
@@ -43,7 +43,7 @@ export default function Experience() {
     {
       position: 'Freelancer Front-End Developer',
       company: 'EveryFriday',
-      date: 'March 2021 -',
+      date: 'March 2021',
       description: `Worked in a few projects where I had to build new templates, new pages, and make updates to the codebase, building new features, allowing the Client to 
       create new Pages using one of the created templates, also had to manually test sites in various browsers and mobile devices to ensure cross-browser compatibility and responsiveness was pixel perfect.
       Primarily using PHP, Wordpress, ACF, JavaScript(ES6) and SASS/CSS`,
