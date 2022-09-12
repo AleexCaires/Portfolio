@@ -14,6 +14,7 @@ import {
   IconWrapper,
   NavBtn,
   NavBtnLink,
+  MobileWrapper,
   
 } from './Navbar.styles';
 
@@ -53,6 +54,29 @@ export function MobileNav() {
           </div>
         </Hamburger>
         <MobileMenu className={clsx(navOpen ? 'open' : '')}></MobileMenu> 
+        <MobileWrapper>
+        <NavItem>
+          <Link href="/#About" passHref>
+            <NavLinks><span>1.</span>About</NavLinks>
+          </Link>
+          </NavItem>
+          <NavItem>
+          <Link href="/#Experience" passHref>
+            <NavLinks><span>2.</span>Experience</NavLinks>
+          </Link>
+          </NavItem>
+          <NavItem>
+          <Link href="/#Projects" passHref>
+            <NavLinks><span>3.</span>Projects</NavLinks>
+          </Link>
+          </NavItem>
+          <NavItem>
+          <Link href="/#Contact" passHref>
+            <NavLinks><span>4.</span>Contact</NavLinks>
+          </Link>
+          </NavItem>
+          
+        </MobileWrapper>
       </NavMenu>
       </NavbarContainer>
     </Nav>
