@@ -12,12 +12,18 @@ export const ExperienceContainer = styled.div`
         align-items: flex-start;
         justify-content: space-between;
 
-
     `}
 
     ${media.greaterThan(breakpoints.xlarge())`
         
     `}
+
+    ${media.lessThan(breakpoints.small())`
+        ul{
+            color: red;
+            width: 100%;
+        }
+        `}
 
     ul{
     color: white;
@@ -57,6 +63,8 @@ export const ExperienceContainer = styled.div`
             &.open {
         opacity: 1;
         border-bottom: 1px solid ${p => p.theme.color.primaryColor};
+        border-top: 1px solid ${p => p.theme.color.primaryColor};
+        margin-top: 10px;
         }
 
         &.closed {
