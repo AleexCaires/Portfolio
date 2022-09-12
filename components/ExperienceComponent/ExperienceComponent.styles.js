@@ -25,6 +25,8 @@ export const ExperienceContainer = styled.div`
 
 
 
+
+
     .company{
         list-style: none;
         cursor: pointer;
@@ -83,6 +85,7 @@ export const Tabs = styled.ul`
         font-size: 1rem;
         border-right: 2px solid transparent;
         transition: all 0.4s ease-in-out;
+        white-space: nowrap;
 
         &:hover,
         &.active {
