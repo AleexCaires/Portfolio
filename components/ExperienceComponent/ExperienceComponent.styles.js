@@ -23,15 +23,25 @@ export const ExperienceContainer = styled.div`
             color: red;
             width: 100%;
         }
+
+        .company{
+            text-align: start!important;
+        }
+
+        .company svg{
+            margin-left: 8px;
+        }
+
+        .open{
+            .company{
+            display: block;
+            }
+        }
         `}
 
     ul{
     color: white;
 }
-
-
-
-
 
     .company{
         list-style: none;
@@ -65,6 +75,7 @@ export const ExperienceContainer = styled.div`
         border-bottom: 1px solid ${p => p.theme.color.primaryColor};
         border-top: 1px solid ${p => p.theme.color.primaryColor};
         margin-top: 10px;
+
         }
 
         &.closed {
