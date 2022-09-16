@@ -170,15 +170,27 @@ export const Hamburger = styled.figure`
 `;
 
 export const MobileMenu = styled.div`
-    display: block;
+    position: fixed;
     height: 100%;
     width: 100%;
-    transform: rotateX(180deg);
     overflow: hidden;
+    top: 40px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateX(100%);
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.5s ease;
+    background-color: #2B2348;
 
     &.open {
-        transform: rotateX(0deg);
-        height: auto;
+        transform: translateX(0);
+        pointer-events: auto;
+        opacity: 1;
+    }
+    &.closed {
+        opacity: 0;
     }
 `
 
@@ -188,3 +200,28 @@ export const MobileWrapper = styled.div`
     height: 100%;
 `
 
+export const MobileItem = styled.div`
+    display: flex;
+    flex-direction: column;
+    align items: center;
+    height: 50px;
+    padding: 20px;
+`
+
+export const MobileNavLinks = styled.div`
+    color: white;
+    font-weight: 300;
+    &.active {
+        border-bottom: 2px solid ${p => p.theme.color.primaryColor};
+    }
+    &:hover {
+        color: ${p => p.theme.color.primaryColor};
+    }
+
+    span{
+        margin-right: 5px;
+        color: ${p => p.theme.color.primaryColor};
+    }
+
+
+`
