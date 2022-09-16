@@ -53,7 +53,8 @@ export function MobileNav() {
               <span></span>
           </div>
         </Hamburger>
-        <MobileMenu className={clsx(navOpen ? 'open' : '')}></MobileMenu> 
+        <MobileMenu className={clsx(navOpen ? 'open' : '')}>
+          </MobileMenu> 
         <MobileWrapper>
         <NavItem>
           <Link href="/#About" passHref>
