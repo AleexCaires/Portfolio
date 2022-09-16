@@ -14,8 +14,8 @@ import {
   IconWrapper,
   NavBtn,
   NavBtnLink,
-  MobileWrapper,
-  
+  MobileNavLinks,
+  MobileItem,
 } from './Navbar.styles';
 
 import Link from 'next/link';
@@ -30,11 +30,14 @@ export function MobileNav() {
     setNavOpen(!navOpen);
   }
 
+  const closeNav = () => {
+    setNavOpen(navOpen)
+  }
+
   const router = useRouter();
     const handleClickDown = () => {
         router.push('./#Home');
     }
-  
 
   return(
     <>
@@ -53,34 +56,31 @@ export function MobileNav() {
               <span></span>
           </div>
         </Hamburger>
-        <MobileMenu className={clsx(navOpen ? 'open' : '')}>
-          </MobileMenu> 
-        <MobileWrapper>
-        <NavItem>
-          <Link href="/#About" passHref>
-            <NavLinks><span>1.</span>About</NavLinks>
-          </Link>
-          </NavItem>
-          <NavItem>
-          <Link href="/#Experience" passHref>
-            <NavLinks><span>2.</span>Experience</NavLinks>
-          </Link>
-          </NavItem>
-          <NavItem>
-          <Link href="/#Projects" passHref>
-            <NavLinks><span>3.</span>Projects</NavLinks>
-          </Link>
-          </NavItem>
-          <NavItem>
-          <Link href="/#Contact" passHref>
-            <NavLinks><span>4.</span>Contact</NavLinks>
-          </Link>
-          </NavItem>
-          
-        </MobileWrapper>
       </NavMenu>
       </NavbarContainer>
     </Nav>
+    <MobileMenu className={clsx(navOpen ? 'open' : '')}>
+      <MobileItem>
+          <Link href="/#About" passHref>
+            <MobileNavLinks><span>1.</span>About</MobileNavLinks>
+          </Link>
+          </MobileItem>
+          <MobileItem>
+          <Link href="/#Experience" passHref>
+            <MobileNavLinks><span>2.</span>Experience</MobileNavLinks>
+          </Link>
+          </MobileItem>
+          <MobileItem>
+          <Link href="/#Projects" passHref>
+            <MobileNavLinks><span>3.</span>Projects</MobileNavLinks>
+          </Link>
+          </MobileItem>
+          <MobileItem>
+          <Link href="/#Contact" passHref>
+            <MobileNavLinks><span>4.</span>Contact</MobileNavLinks>
+          </Link>
+          </MobileItem>
+    </MobileMenu> 
     </>
   );
 }
