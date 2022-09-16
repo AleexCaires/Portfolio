@@ -149,11 +149,11 @@ export const Hamburger = styled.figure`
         .inner {
             span {
                 transition: top 0.2s ease-in-out, 
-                                transform 0.4s ease-in-out 0.2s, 
-                                opacity 0.1s ease-in-out 0.2s;
+                    transform 0.4s ease-in-out 0.2s, 
+                    opacity 0.1s ease-in-out 0.2s;
                 &:nth-child(1) {
-                        top: 6px;
-                        transform: rotate(45deg);
+                    top: 6px;
+                    transform: rotate(45deg);
                 }
                 &:nth-child(2) {
                     top: 6px;
@@ -183,5 +183,8 @@ export const MobileMenu = styled.div`
 `
 
 export const MobileWrapper = styled.div`
+    display: block;
+    width: 100%;
+    height: 100%;
 `
 
