@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const FooterWrapper = styled.div`
-    height: 156px;
     background-color: ${p => p.theme.color.secondaryBG};
     display: flex;
     flex-direction: column;
