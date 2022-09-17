@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import clsx from 'clsx';
-import { useMediaQuery } from '../../hooks/useMediaQuery';
+import { useMediaQuery } from "usehooks-ts";
 import { breakpoints } from '../../theme/breakpoints';
 import {
   Nav,
@@ -28,10 +28,6 @@ export function MobileNav() {
 
   const handleNav = () => {
     setNavOpen(!navOpen);
-  }
-
-  const closeNav = () => {
-    setNavOpen(navOpen)
   }
 
   const router = useRouter();
@@ -62,22 +58,22 @@ export function MobileNav() {
     <MobileMenu className={clsx(navOpen ? 'open' : '')}>
       <MobileItem>
           <Link href="/#About" passHref>
-            <MobileNavLinks><span>1.</span>About</MobileNavLinks>
+            <MobileNavLinks onClick={handleNav}><span>1.</span>About</MobileNavLinks>
           </Link>
           </MobileItem>
           <MobileItem>
           <Link href="/#Experience" passHref>
-            <MobileNavLinks><span>2.</span>Experience</MobileNavLinks>
+            <MobileNavLinks onClick={handleNav}><span>2.</span>Experience</MobileNavLinks>
           </Link>
           </MobileItem>
           <MobileItem>
           <Link href="/#Projects" passHref>
-            <MobileNavLinks><span>3.</span>Projects</MobileNavLinks>
+            <MobileNavLinks onClick={handleNav}><span>3.</span>Projects</MobileNavLinks>
           </Link>
           </MobileItem>
           <MobileItem>
           <Link href="/#Contact" passHref>
-            <MobileNavLinks><span>4.</span>Contact</MobileNavLinks>
+            <MobileNavLinks onClick={handleNav}><span>4.</span>Contact</MobileNavLinks>
           </Link>
           </MobileItem>
     </MobileMenu> 
