@@ -1,5 +1,5 @@
 import React from 'react'
-import { useMediaQuery } from '../../hooks/useMediaQuery';
+import { useMediaQuery } from 'usehooks-ts';
 import { breakpoints } from '../../theme/breakpoints';
 import { ExperienceMobile, ExperienceDesktop } from '../ExperienceComponent/ExperienceComponent';
 import { Container } from "../Container/Container";
