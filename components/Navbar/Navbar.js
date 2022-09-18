@@ -124,7 +124,7 @@ export function DesktopNav() {
           </NavItem>
           <NavBtn>  
              {/* Add the Resume download in the public files and target it with "href path"  */}    
-            <NavBtnLink onClick={handleClick} href='/background.jpg' download>Resume</NavBtnLink>
+            <NavBtnLink onClick={handleClick} href='/Resume.pdf' download>Resume</NavBtnLink>
           </NavBtn>
         </NavMenu>      
       </NavbarContainer>
