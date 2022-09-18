@@ -105,6 +105,7 @@ export const Tabs = styled.ul`
         border-right: 2px solid transparent;
         transition: all 0.4s ease-in-out;
         white-space: nowrap;
+        cursor: pointer;
 
         &:hover,
         &.active {
