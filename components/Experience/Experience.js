@@ -21,7 +21,7 @@ export default function Experience() {
       position: 'Freelancer Front-End Developer',
       company: 'Astrazeneca',
       date: 'Sep 2021 - Present',
-      description: `I am currently in a Freelance Role, where I do web support and general Ui Updates to the application. 
+      description: `I am worked in a Freelance Role, where I do web support and general UI Updates to the application. 
       Also worked with a team of developers to build new features and provide support in adding interactive SVG maps to one of their web apps used by thousands of users. `,
     },
     {
