@@ -16,7 +16,7 @@ export default function Experience() {
       position: 'Junior Frontend Developer',
       company: 'Conversio',
       date: 'March 2022 - Present',
-      description: `Currently working as a Junior Frontend Feveloper at Conversio.`,
+      description: `Started working as a Junior Front end Developer, current position Front end developer.`,
     },
     {
       position: 'Freelancer Front-End Developer',
