@@ -5,10 +5,11 @@ import { ExperienceMobile, ExperienceDesktop } from '../ExperienceComponent/Expe
 import { Container } from "../Container/Container";
 import { Headings } from '../Headings/Headings';
 import { Title } from './Experience.styles'
+import { useState, useEffect } from 'react';
 
 export default function Experience() {
 
-  const matchesMobile = useMediaQuery(`(max-width: ${breakpoints.sm}px)`);
+  const matchesMobile = useMediaQuery(`(max-width: 767px)`);
 
   const ExperienceData = [
     {
@@ -64,10 +65,25 @@ export default function Experience() {
     },
   ];
 
-  return(
-    <Container id="Experience">
+    const [isMobile, setIsMobile] = useState(false);
+  
+    useEffect(() => {
+      function handleResize() {
+        setIsMobile(window.innerWidth <= 768);
+      }
+  
+      window.addEventListener('resize', handleResize);
+      handleResize();
+  
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+  
+    return (
+      <Container id="Experience">
         <Headings number="2" heading="Experience" position="right" />
-        { matchesMobile ? <ExperienceMobile data={ExperienceData} /> : <ExperienceDesktop data={ExperienceData} /> }
-    </Container>
-  )
+        { isMobile ? <ExperienceMobile data={ExperienceData} /> : <ExperienceDesktop data={ExperienceData} /> }
+      </Container>
+    );
+  
+  
 }
