@@ -20,7 +20,7 @@ export default function Experience() {
     },
     {
       position: 'Junior Frontend Developer',
-      company: 'Conversio',
+      company: 'ConversioCRO',
       date: 'March 2022 - Sep 2022',
       description: `Started working as a Junior Front end Developer.`,
     },
