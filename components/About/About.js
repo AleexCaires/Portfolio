@@ -23,7 +23,7 @@ export default function About() {
                     </Octagon>
                     <Text>
                         <p>Hello, <br></br>I am Tiago Caires.
-                        Originally from Madeira Island, Portugal where I study Science and Technology to the vibrant city of London, United Kingdom where I started my career of Web development in 2018.
+                        Originally from Madeira Island, Portugal where I studied Science and Technology to the vibrant city of London, United Kingdom where I started my career of Web development in 2018.
                         </p>
                         <p>With over 3 years of experience in a wide range of sectors from agency world, pharmaceutical, retail, finTech, and many others as a freelance contractor working from web banners and email campaigns to SPA&apos;s and WPA&apos;s expanding my experience and refining my knowledge in the field.</p>
                         <p>I am a young and eager developer, but that is not all! I love to keep my body as active as my mind by doing exercise, hikes and mountain biking.</p>
