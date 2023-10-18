@@ -65,14 +65,17 @@ export default function Experience() {
     {
       position: 'Freelancer Front-End Developer',
       company: 'Lyxor ETF',
-      date: 'September 2020 ',
-      description: `I had the privilege of working on an exciting Lyxor ETF project, where my primary responsibility was to design and build web banners for a series of diverse European campaigns. These web banners played a pivotal role in the promotion of Lyxor ETF products and services across the European market.` + <br></br> + `
-
-      My work began with the transformation of conceptual ideas and campaign objectives into visually captivating web banners. Collaborating closely with the marketing team and graphic designers, I ensured that each banner effectively conveyed the unique message and purpose of its corresponding campaign.` + <br></br> + `
-      
-      One of the defining aspects of this project was the meticulous approach to banner creation. I meticulously crafted each web banner by hand, using the Sketch app, to provide a tailored and personalized touch to every campaign. This hands-on approach allowed us to adapt to the distinct requirements of each campaign, ensuring that our banners effectively conveyed their messages.` + <br></br> + `
-      The key focus of these web banners was to maximize interactivity and image quality. To achieve this, I incorporated various interactive elements, such as clickable buttons, animations, and user-friendly navigation. The aim was to enhance the user experience and encourage active engagement with the banners. Furthermore, I implemented image optimization techniques to ensure that the visuals were sharp, clear, and visually appealing, leaving a lasting and positive impression on the audience.`,
-    },
+      date: 'September 2020',
+      description: `
+        <p>I had the privilege of working on an exciting Lyxor ETF project, where my primary responsibility was to design and build web banners for a series of diverse European campaigns. These web banners played a pivotal role in the promotion of Lyxor ETF products and services across the European market.</p>
+    
+        <p>My work began with the transformation of conceptual ideas and campaign objectives into visually captivating web banners. Collaborating closely with the marketing team and graphic designers, I ensured that each banner effectively conveyed the unique message and purpose of its corresponding campaign.</p>
+        
+        <p>One of the defining aspects of this project was the meticulous approach to banner creation. I meticulously crafted each web banner by hand, using the Sketch app, to provide a tailored and personalized touch to every campaign. This hands-on approach allowed us to adapt to the distinct requirements of each campaign, ensuring that our banners effectively conveyed their messages.</p>
+    
+        <p>The key focus of these web banners was to maximize interactivity and image quality. To achieve this, I incorporated various interactive elements, such as clickable buttons, animations, and user-friendly navigation. The aim was to enhance the user experience and encourage active engagement with the banners. Furthermore, I implemented image optimization techniques to ensure that the visuals were sharp, clear, and visually appealing, leaving a lasting and positive impression on the audience.</p>
+      `,
+    } 
   ];
 
     const [isMobile, setIsMobile] = useState(false);
