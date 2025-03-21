@@ -34,7 +34,7 @@ export default function Hero() {
                 <HeroLine></HeroLine>
                 <HeroText>
                     <HeroTitle>Hi, my name is</HeroTitle>
-                    <HeroName>Tiago Caires</HeroName>
+                    <HeroName>Alex Caires</HeroName>
                     <HeroDescription>I build things in a machine to be used by humans.</HeroDescription>
                     <HeroWord>I am a frontend developer that specializes in the design and build of exceptional digital experiences.</HeroWord>
                 </HeroText>
