@@ -41,6 +41,16 @@ export default function Projects() {
       },
     },
     {
+      title: 'Calendar UI View',
+      description:
+        "Built and designed a Holiday Tracker View that fetches data from Google Calendar and displays it in an intuitive front-end UI.",
+      featuredImage: 'url("/CalendarUI.png")',
+      tags: ['Javascript',"Python","GitHub Actions"],
+      url: {
+        live: '/.',
+      },
+    },
+    {
       title: 'SandalWood Custom Carpentry',
       description:
         "Built a one-page portfolio website to showcase a carpentry builder's work, featuring a responsive and user-friendly design.",

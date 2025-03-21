@@ -126,7 +126,7 @@ export const LiveLink = styled.a`
     width: 30px;
     width: auto;
     cursor: pointer;
-
+    display: flex;
     svg{
         margin-left: 5px;
         width: auto;
