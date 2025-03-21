@@ -40,6 +40,26 @@ export default function Projects() {
         github: 'https://github.com/Mario-Duarte/PX2Rem',
       },
     },
+    {
+      title: 'SandalWood Custom Carpentry',
+      description:
+        "Built a one-page portfolio website to showcase a carpentry builder's work, featuring a responsive and user-friendly design.",
+      featuredImage: 'url("/Sandalwood.png")',
+      tags: ['React'],
+      url: {
+        live: 'https://sandalwoodcustomcarpentry.co.uk/',
+      },
+    },
+    {
+      title: 'Inert Recycling Ltd',
+      description:
+        "Built and designed a website to showcase a haulage company's services, featuring a responsive design.",
+      featuredImage: 'url("/InertRecycling.png")',
+      tags: ['React',"Styled Components"],
+      url: {
+        live: 'https://www.inertrecycling.co.uk/',
+      },
+    },
   ];
 
   const [activeIndex, setActiveIndex] = useState(null); // Track the active hovered card index
