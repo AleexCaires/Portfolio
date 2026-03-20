@@ -1,12 +1,19 @@
-import styled from 'styled-components'
+import styled from "styled-components";
+import media from "styled-media-query";
+import { breakpoints } from "../../theme/breakpoints";
 
-export const Title = styled.p`
-font-size: 42px;
-border-bottom: 1px solid ${p => p.theme.color.primaryColor};
-color: #fff;
+export const ExperienceMobileOnly = styled.div`
+  display: block;
 
-span{
-    color: ${p => p.theme.color.primaryColor};
-    margin-right: 10px;
-}
-`
+  ${media.greaterThan(breakpoints.small())`
+        display: none;
+    `}
+`;
+
+export const ExperienceDesktopOnly = styled.div`
+  display: none;
+
+  ${media.greaterThan(breakpoints.small())`
+        display: block;
+    `}
+`;

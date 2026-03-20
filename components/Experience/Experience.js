@@ -1,95 +1,70 @@
-import React from 'react'
-import { useMediaQuery } from 'usehooks-ts';
-import { breakpoints } from '../../theme/breakpoints';
-import { ExperienceMobile, ExperienceDesktop } from '../ExperienceComponent/ExperienceComponent';
+import React from "react";
+import { ExperienceMobile, ExperienceDesktop } from "../ExperienceComponent/ExperienceComponent";
 import { Container } from "../Container/Container";
-import { Headings } from '../Headings/Headings';
-import { Title } from './Experience.styles'
-import { useState, useEffect } from 'react';
+import { Headings } from "../Headings/Headings";
+import { ExperienceDesktopOnly, ExperienceMobileOnly } from "./Experience.styles";
 
 export default function Experience() {
-
-  const matchesMobile = useMediaQuery(`(max-width: 767px)`);
-
   const ExperienceData = [
     {
-      position: 'Frontend Developer',
-      company: 'Conversio',
-      date: 'Sep 2022 - Present',
-      description: `Current position Front end developer.`,
+      position: "Full-Stack Developer",
+      company: "Conversio",
+      date: "Sep 2022 - Present",
+      description: `Build and ship UI features across ecommerce and conversion-focused experiences, working closely with design and experimentation teams to improve clarity, performance, and business outcomes.`,
     },
     {
-      position: 'Junior Frontend Developer',
-      company: 'ConversioCRO',
-      date: 'March 2022 - Sep 2022',
-      description: `Started working as a Junior Front end Developer.`,
+      position: "Junior Full-Stack Developer",
+      company: "ConversioCRO",
+      date: "March 2022 - Sep 2022",
+      description: `Joined the team as a junior developer and quickly moved into hands-on delivery of landing pages, experiments, and production-ready full-stack work for client campaigns.`,
     },
     {
-      position: 'Freelancer Front-End Developer',
-      company: 'Astrazeneca',
-      date: 'Sep 2021 - Present',
-      description: `I am worked in a Freelance Role, where I do web support and general UI Updates to the application. 
-      Also worked with a team of developers to build new features and provide support in adding interactive SVG maps to one of their web apps used by thousands of users. `,
+      position: "Freelancer Full-Stack Developer",
+      company: "Astrazeneca",
+      date: "Sep 2021 - Present",
+      description: `Supported product updates, UI improvements, and new feature delivery, including interactive SVG map work for a web application used by a large international audience.`,
     },
     {
-      position: 'Freelancer Front-End Developer',
-      company: 'RenderMedia',
-      date: 'May 2021  ',
-      description: `To help with the launch of the client new product where I was in charge of creating a highly engadging, mobile first, 
-      marketing page that highlighted the new product and helped with the conversion rate driving new users to download and use the software.
-      This page was built in harmony with their existing Wordpress Theme and branding guidelines, with the use of ACF to create a easy to use admin interface.   `,
+      position: "Freelancer Full-Stack Developer",
+      company: "RenderMedia",
+      date: "May 2021  ",
+      description: `Led the full-stack build for a mobile-first product launch page designed to increase conversion, aligning the implementation with an existing WordPress theme and a flexible ACF-driven content setup.`,
     },
     {
-      position: 'Freelancer Front-End Developer',
-      company: 'Caffe Nero',
-      date: 'March 2021',
-      description: `Worked in a project, where I had to create a Wordpress page template that, loaded a JSON File, selected the correct menu which is language specific,
-      displayed all the items in a responsive grid layout, primarily using PHP, Wordpress, ACF, JavaScript(ES6) and SASS/CSS.
-       `,
+      position: "Freelancer Full-Stack Developer",
+      company: "Caffe Nero",
+      date: "March 2021",
+      description: `Built a WordPress page template that parsed JSON content, selected language-specific menu data, and rendered it in a responsive layout using PHP, JavaScript, and SASS.`,
     },
     {
-      position: 'Freelancer Front-End Developer',
-      company: 'EveryFriday',
-      date: 'March 2021',
-      description: `Worked in a few projects where I had to build new templates, new pages, and make updates to the codebase, building new features, allowing the Client to 
-      create new Pages using one of the created templates, also had to manually test sites in various browsers and mobile devices to ensure cross-browser compatibility and responsiveness was pixel perfect.
-      Primarily using PHP, Wordpress, ACF, JavaScript(ES6) and SASS/CSS`,
+      position: "Freelancer Full-Stack Developer",
+      company: "EveryFriday",
+      date: "March 2021",
+      description: `Delivered templates, landing pages, and codebase updates for multiple client sites, with careful cross-browser QA and reusable CMS-driven page structures.`,
     },
     {
-      position: 'Freelancer Front-End Developer',
-      company: 'Sharp Europe',
-      date: 'September 2020',
-      description: `Worked in a project where I had to Build, Update and add new features to their "Future of Work" micro website.
-      In this project, I remade the Blog page, trough following a pixel perfect design, primarily using HTML5, SASS and modern JavaScript via GitHub version control.`,
+      position: "Freelancer Full-Stack Developer",
+      company: "Sharp Europe",
+      date: "September 2020",
+      description: `Extended and refreshed the Future of Work microsite, including a full rebuild of the blog experience from detailed design direction using HTML, SASS, and modern JavaScript.`,
     },
     {
-      position: 'Freelancer Front-End Developer',
-      company: 'Lyxor ETF',
-      date: 'September 2020 ',
-      description: `I worked for a Lyxor ETF project, where I had to Build Web Banners for multiple European campaigns.
-      These web banners were created and crafted by hand from storyboards in Sketch app to maximize interactivity and image quality of end product.`,
+      position: "Freelancer Full-Stack Developer",
+      company: "Lyxor ETF",
+      date: "September 2020 ",
+      description: `Built interactive web banners for multiple European campaigns, translating storyboard concepts into performant assets with strong visual fidelity.`,
     },
   ];
 
-    const [isMobile, setIsMobile] = useState(false);
-  
-    useEffect(() => {
-      function handleResize() {
-        setIsMobile(window.innerWidth <= 768);
-      }
-  
-      window.addEventListener('resize', handleResize);
-      handleResize();
-  
-      return () => window.removeEventListener('resize', handleResize);
-    }, []);
-  
-    return (
-      <Container id="Experience">
-        <Headings number="2" heading="Experience" position="right" />
-        { isMobile ? <ExperienceMobile data={ExperienceData} /> : <ExperienceDesktop data={ExperienceData} /> }
-      </Container>
-    );
-  
-  
+  return (
+    <Container id="Experience">
+      <Headings number="2" heading="Experience" position="right" />
+      <ExperienceMobileOnly>
+        <ExperienceMobile data={ExperienceData} />
+      </ExperienceMobileOnly>
+      <ExperienceDesktopOnly>
+        <ExperienceDesktop data={ExperienceData} />
+      </ExperienceDesktopOnly>
+    </Container>
+  );
 }

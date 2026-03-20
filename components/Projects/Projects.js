@@ -1,85 +1,69 @@
-import React, { useState } from 'react';
+import React from "react";
 import { Container } from "../Container/Container";
-import { Headings } from '../Headings/Headings';
-import { Btn, BtnInfo } from '../Button/Button.styles';
-import { Card } from '../ProjectCards/Card';
-import { CardsContainer } from '../ProjectCards/CardsContainer';
+import { Headings } from "../Headings/Headings";
+import { Card } from "../ProjectCards/Card";
+import { CardsContainer } from "../ProjectCards/CardsContainer";
 
 export default function Projects() {
   const CardsData = [
     {
-      title: 'FreeHand',
-      description:
-        'FreeHand is a Single Page Application, that was built with the purpose of learning how to build an SPA from scratch, with responsiveness in mind.',
+      title: "FreeHand",
+      description: "A full-stack playground focused on building a single-page product experience from scratch with responsive layouts, component styling, and interaction detail.",
       featuredImage: 'url("/work.jpeg")',
-      tags: ['React', 'Styled Components'],
+      tags: ["React", "Styled Components"],
       url: {
-        live: 'https://free-hand.vercel.app/',
-        github: 'https://github.com/AleexCaires/FreeHand',
+        live: "https://free-hand.vercel.app/",
+        github: "https://github.com/AleexCaires/FreeHand",
       },
     },
     {
-      title: 'QuizGame',
-      description:
-        'Quiz Game is a simple Quiz created with React and Typescript, all questions and answers are implemented from Trivia API as a data source.',
+      title: "QuizGame",
+      description: "A typed React quiz experience powered by the Trivia API, built to sharpen state management, async data handling, and clean UI feedback.",
       featuredImage: 'url("/QuizGame.png")',
-      tags: ['React', 'Typescript', 'Styled Components'],
+      tags: ["React", "Typescript", "Styled Components"],
       url: {
-        live: 'https://jogo-da-perguntinha.vercel.app/',
-        github: 'https://github.com/AleexCaires/Quiz-Game',
+        live: "https://jogo-da-perguntinha.vercel.app/",
+        github: "https://github.com/AleexCaires/Quiz-Game",
       },
     },
     {
-      title: 'PX2REM',
-      description:
-        'PX2REM is a simple application that converts points, pixels, percentage, and rem interchangeably with a simple and clean interface.',
+      title: "PX2REM",
+      description: "A desktop utility for converting points, pixels, percentages, and rem values through a lightweight interface designed for everyday full-stack workflows.",
       featuredImage: 'url("/px2rem_social.png")',
-      tags: ['React', 'Typescript', 'Electron'],
+      tags: ["React", "Typescript", "Electron"],
       url: {
-        live: 'https://mario-duarte.github.io/PX2Rem/',
-        github: 'https://github.com/Mario-Duarte/PX2Rem',
+        live: "https://mario-duarte.github.io/PX2Rem/",
+        github: "https://github.com/Mario-Duarte/PX2Rem",
       },
     },
     {
-      title: 'Calendar UI View',
-      description:
-        "Built and designed a Holiday Tracker View that fetches data from Google Calendar and displays it in an intuitive front-end UI.",
+      title: "Calendar UI View",
+      description: "A holiday tracking dashboard concept that syncs Google Calendar data into a clearer planning interface for teams and managers.",
       featuredImage: 'url("/CalendarUI.png")',
-      tags: ['Javascript',"Python","GitHub Actions"],
+      tags: ["Javascript", "Python", "GitHub Actions"],
       url: {
-        live: '/.',
+        live: "",
       },
     },
     {
-      title: 'SandalWood Custom Carpentry',
-      description:
-        "Built a one-page portfolio website to showcase a carpentry builder's work, featuring a responsive and user-friendly design.",
+      title: "SandalWood Custom Carpentry",
+      description: "A conversion-focused one-page site for a custom carpentry business, built to present craftsmanship clearly across mobile and desktop.",
       featuredImage: 'url("/Sandalwood.png")',
-      tags: ['React'],
+      tags: ["React"],
       url: {
-        live: 'https://sandalwoodcustomcarpentry.co.uk/',
+        live: "https://sandalwoodcustomcarpentry.co.uk/",
       },
     },
     {
-      title: 'Inert Recycling Ltd',
-      description:
-        "Built and designed a website to showcase a haulage company's services, featuring a responsive design.",
+      title: "Inert Recycling Ltd",
+      description: "A responsive marketing site for a haulage and recycling company, designed to explain services quickly and support lead generation.",
       featuredImage: 'url("/InertRecycling.png")',
-      tags: ['React',"Styled Components"],
+      tags: ["React", "Styled Components"],
       url: {
-        live: 'https://www.inertrecycling.co.uk/',
+        live: "https://www.inertrecycling.co.uk/",
       },
     },
   ];
-
-  const [activeIndex, setActiveIndex] = useState(null); // Track the active hovered card index
-
-  const [cards, setCards] = useState(CardsData.length);
-  const [viewCards, setViewCards] = useState(6);
-
-  const handleShowMore = () => {
-    setViewCards(viewCards + 6);
-  };
 
   return (
     <Container id="Projects">
@@ -87,28 +71,9 @@ export default function Projects() {
       <CardsContainer>
         {CardsData &&
           CardsData.map((card, index) => (
-            <Card
-              key={card.title}
-              index={index} // Pass index to Card
-              activeIndex={activeIndex} // Pass active index
-              setActiveIndex={setActiveIndex} // Pass setter function to Card
-              FeaturedImage={card.featuredImage}
-              Title={card.title}
-              Description={card.description ? card.description : ''}
-              Tags={card.tags ? card.tags : ''}
-              LiveUrl={card.url.live ? card.url.live : ''}
-              GitUrl={card.url.github ? card.url.github : ''}
-            />
+            <Card key={card.title} FeaturedImage={card.featuredImage} Title={card.title} Description={card.description ? card.description : ""} Tags={card.tags ? card.tags : ""} LiveUrl={card.url.live ? card.url.live : ""} GitUrl={card.url.github ? card.url.github : ""} />
           ))}
       </CardsContainer>
-
-      {cards > viewCards && (
-        <Btn>
-          <BtnInfo to="" onClick={handleShowMore}>
-            Show More
-          </BtnInfo>
-        </Btn>
-      )}
     </Container>
   );
 }

@@ -1,17 +1,43 @@
-import react, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export const useMediaQuery = (query) => {
-    if ( typeof window === 'undefined' || typeof window.matchMedia === 'undefined' ) return false;
+  const [matches, setMatches] = useState(() => {
+    if (typeof window === "undefined" || typeof window.matchMedia === "undefined") {
+      return false;
+    }
 
-    const mediaQuery = window.matchMedia(query);
-    const [match, setMatch] = react.useState(!!mediaQuery.matches);
+    return window.matchMedia(query).matches;
+  });
 
-    react.useEffect(() => {
-        const handler = () => setMatch(!!mediaQuery.matches);
-        mediaQuery.addEventListener('change', handler);
-        return () => mediaQuery.removeEventListener('change', handler)
-    }, [])
-    
+  useEffect(() => {
+    if (typeof window === "undefined" || typeof window.matchMedia === "undefined") {
+      return undefined;
+    }
 
-    return match;
-}
+    const mediaQueryList = window.matchMedia(query);
+
+    const onChange = (eventOrList) => {
+      setMatches(eventOrList.matches);
+    };
+
+    // Sync once on mount.
+    setMatches(mediaQueryList.matches);
+
+    // Safari < 14 uses addListener/removeListener.
+    if (typeof mediaQueryList.addEventListener === "function") {
+      mediaQueryList.addEventListener("change", onChange);
+    } else {
+      mediaQueryList.addListener(onChange);
+    }
+
+    return () => {
+      if (typeof mediaQueryList.removeEventListener === "function") {
+        mediaQueryList.removeEventListener("change", onChange);
+      } else {
+        mediaQueryList.removeListener(onChange);
+      }
+    };
+  }, [query]);
+
+  return matches;
+};

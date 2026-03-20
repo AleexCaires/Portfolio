@@ -1,152 +1,134 @@
-import React, { useState } from 'react';
-import clsx from 'clsx';
-import { useMediaQuery } from "usehooks-ts";
-import { breakpoints } from '../../theme/breakpoints';
-import {
-  Nav,
-  Hamburger,
-  MobileMenu,
-  NavbarContainer,
-  Icon,
-  NavMenu,
-  NavItem,
-  NavLinks,
-  IconWrapper,
-  NavBtn,
-  NavBtnLink,
-  MobileNavLinks,
-  MobileItem,
-} from './Navbar.styles';
+import React, { useState } from "react";
+import clsx from "clsx";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
+import { breakpoints } from "../../theme/breakpoints";
+import { Nav, Hamburger, MobileMenu, NavbarContainer, Icon, NavMenu, NavItem, NavLinks, IconWrapper, NavBtn, NavBtnLink, MobileNavLinks, MobileItem } from "./Navbar.styles";
 
-import Link from 'next/link';
-import { useRouter } from 'next/router'
-
+import Link from "next/link";
 
 export function MobileNav() {
-
   const [navOpen, setNavOpen] = useState(false);
 
   const handleNav = () => {
-    setNavOpen(!navOpen);
-  }
+    setNavOpen((current) => !current);
+  };
 
-  const router = useRouter();
-    const handleClickDown = () => {
-        router.push('./#Home');
-    }
+  const closeNav = () => {
+    setNavOpen(false);
+  };
 
-  return(
+  return (
     <>
-    <Nav>
       <NavbarContainer>
-      <IconWrapper onClick={handleClickDown}>
-      <Link href="/#Home" passHref>
-            <Icon></Icon>
-      </Link>
-      </IconWrapper>
-      <NavMenu>
-        <Hamburger onClick={handleNav} className={clsx(navOpen ? 'colapse-spin' : ' ')}>
-          <div className='inner'>
+        <Link href="/#Home" passHref>
+          <IconWrapper aria-label="Go to top of page" onClick={closeNav}>
+            <Icon />
+          </IconWrapper>
+        </Link>
+        <NavMenu>
+          <Hamburger onClick={handleNav} className={clsx(navOpen ? "colapse-spin" : "")} aria-label={navOpen ? "Close navigation menu" : "Open navigation menu"} aria-expanded={navOpen} aria-controls="mobile-menu" type="button">
+            <div className="inner">
               <span></span>
               <span></span>
               <span></span>
-          </div>
-        </Hamburger>
-      </NavMenu>
+            </div>
+          </Hamburger>
+        </NavMenu>
       </NavbarContainer>
-    </Nav>
-    <MobileMenu className={clsx(navOpen ? 'open' : '')}>
-      <MobileItem>
+      <MobileMenu id="mobile-menu" className={clsx(navOpen ? "open" : "")}>
+        <MobileItem>
           <Link href="/#About" passHref>
-            <MobileNavLinks onClick={handleNav}><span>1.</span>About</MobileNavLinks>
+            <MobileNavLinks onClick={closeNav}>
+              <span>1.</span>About
+            </MobileNavLinks>
           </Link>
-          </MobileItem>
-          <MobileItem>
+        </MobileItem>
+        <MobileItem>
           <Link href="/#Experience" passHref>
-            <MobileNavLinks onClick={handleNav}><span>2.</span>Experience</MobileNavLinks>
+            <MobileNavLinks onClick={closeNav}>
+              <span>2.</span>Experience
+            </MobileNavLinks>
           </Link>
-          </MobileItem>
-          <MobileItem>
+        </MobileItem>
+        <MobileItem>
           <Link href="/#Projects" passHref>
-            <MobileNavLinks onClick={handleNav}><span>3.</span>Projects</MobileNavLinks>
+            <MobileNavLinks onClick={closeNav}>
+              <span>3.</span>Projects
+            </MobileNavLinks>
           </Link>
-          </MobileItem>
-          <MobileItem>
+        </MobileItem>
+        <MobileItem>
           <Link href="/#Contact" passHref>
-            <MobileNavLinks onClick={handleNav}><span>4.</span>Contact</MobileNavLinks>
+            <MobileNavLinks onClick={closeNav}>
+              <span>4.</span>Contact
+            </MobileNavLinks>
           </Link>
-          </MobileItem>
-    </MobileMenu> 
+        </MobileItem>
+        <MobileItem>
+          <NavBtnLink href="/Resume.pdf" download>
+            Resume
+          </NavBtnLink>
+        </MobileItem>
+      </MobileMenu>
     </>
   );
 }
 
 export function DesktopNav() {
-  let count = 0;
-  const handleClick = (e) => {
-  count === 0 ? count++ : e.preventDefault();
-  }
-
-  const router = useRouter();
-    const handleClickDown = () => {
-        router.push('./#Home');
-    }
-
-  return(
+  return (
     <>
-    <Nav>
       <NavbarContainer>
-        <IconWrapper onClick={handleClickDown}>
         <Link href="/#Home" passHref>
-            <Icon></Icon>
+          <IconWrapper aria-label="Go to top of page">
+            <Icon />
+          </IconWrapper>
         </Link>
-        </IconWrapper>
         <NavMenu>
           <NavItem>
-          <Link href="/#About" passHref>
-            <NavLinks><span>1.</span>About</NavLinks>
-          </Link>
+            <Link href="/#About" passHref>
+              <NavLinks>
+                <span>1.</span>About
+              </NavLinks>
+            </Link>
           </NavItem>
           <NavItem>
-          <Link href="/#Experience" passHref>
-            <NavLinks><span>2.</span>Experience</NavLinks>
-          </Link>
+            <Link href="/#Experience" passHref>
+              <NavLinks>
+                <span>2.</span>Experience
+              </NavLinks>
+            </Link>
           </NavItem>
           <NavItem>
-          <Link href="/#Projects" passHref>
-            <NavLinks><span>3.</span>Projects</NavLinks>
-          </Link>
+            <Link href="/#Projects" passHref>
+              <NavLinks>
+                <span>3.</span>Projects
+              </NavLinks>
+            </Link>
           </NavItem>
           <NavItem>
-          <Link href="/#Contact" passHref>
-            <NavLinks><span>4.</span>Contact</NavLinks>
-          </Link>
+            <Link href="/#Contact" passHref>
+              <NavLinks>
+                <span>4.</span>Contact
+              </NavLinks>
+            </Link>
           </NavItem>
-          <NavBtn>  
-             {/* Add the Resume download in the public files and target it with "href path"  */}    
-            <NavBtnLink onClick={handleClick} href='/Resume.pdf' download>Resume</NavBtnLink>
+          <NavBtn>
+            <NavBtnLink href="/Resume.pdf" download>
+              Resume
+            </NavBtnLink>
           </NavBtn>
-        </NavMenu>      
+        </NavMenu>
       </NavbarContainer>
-    </Nav>
     </>
   );
 }
 
-export default function Navbar()  {
-
+export default function Navbar() {
   const matchesMobile = useMediaQuery(`(max-width: ${breakpoints.sm}px)`);
 
-  return(
+  return (
     <>
-        <Nav>
-          {matchesMobile &&
-            <MobileNav />
-          }
-          {!matchesMobile &&
-            <DesktopNav />
-          }
-        </Nav>
+      <Nav>{matchesMobile ? <MobileNav /> : <DesktopNav />}</Nav>
     </>
-  )
+  );
 }

@@ -1,31 +1,25 @@
-import React from 'react'
+import React from "react";
 import { Container } from "../Container/Container";
-import { Headings } from '../Headings/Headings';
-import { Links } from '../Links/Links'
-import { ContactWrapper, Text } from './Contact.styles';
-import { Btn, BtnInfo } from '../Button/Button.styles';
-
+import { Headings } from "../Headings/Headings";
+import { Links } from "../Links/Links";
+import { ContactActions, ContactWrapper, ContactButton, ContactButtonSecondary, Text } from "./Contact.styles";
 
 export default function Contact() {
-  let count = 0;
-    const handleClick = (e) => {
-      count === 0 ? count++ : e.preventDefault();
-    }
-    
-  return(
+  return (
     <Container id="Contact">
-        <Headings number="4" heading="Contact" position="right" />
-        <ContactWrapper>
-          <Text>
-            <p>Do you need a helping hand on your project?</p>
-            <p>If you want to get in touch to discuss an amazing project opportunity, job role, consultation, or you just want to say Hi, feel free to contact me using one of the options bellow.
-            </p>
-            <p><span>LinkedIn</span><Links target="_blank" href="https://www.linkedin.com/in/alex-caires-b7b39b174/" rel="noopener noreferrer">Alex Caires</Links></p>
-          </Text>
-          <Btn>
-            <BtnInfo onClick={() => window.location = 'mailto:tiagoaleex@gmail.com'}> Email me</BtnInfo>
-          </Btn>
-        </ContactWrapper>
+      <Headings number="4" heading="Contact" position="right" />
+      <ContactWrapper>
+        <Text>
+          <p>Have a product, team, or idea that needs stronger full-stack execution?</p>
+          <p>If you want to talk about a role, freelance project, collaboration, or a rebuild that needs more care in the details, get in touch. I&apos;m interested in thoughtful work and strong teams.</p>
+        </Text>
+        <ContactActions>
+          <ContactButton href="mailto:tiagoaleex@gmail.com">Email me</ContactButton>
+          <ContactButtonSecondary target="_blank" href="https://www.linkedin.com/in/alex-caires-b7b39b174/" rel="noopener noreferrer">
+            Connect on LinkedIn
+          </ContactButtonSecondary>
+        </ContactActions>
+      </ContactWrapper>
     </Container>
-  )
+  );
 }

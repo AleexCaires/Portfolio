@@ -1,87 +1,72 @@
-import styled from 'styled-components'
-import media from "styled-media-query"
-import { breakpoints } from '../../theme/breakpoints'
+import styled from "styled-components";
+import media from "styled-media-query";
+import { breakpoints } from "../../theme/breakpoints";
 
 export const AboutSection = styled.div`
-    margin: 30px 20px 20px 20px;
-
-    @media screen and (min-width: 800px) {
-    flex-direction: row;
-`
-
-
-export const Title = styled.p`
-    font-size: 42px;
-    border-bottom: 1px solid ${p => p.theme.color.primaryColor};
-    color: #fff;
-
-    span{
-        color: ${p => p.theme.color.primaryColor};
-        margin-right: 10px;
-}
-`
+  position: relative;
+`;
 
 export const Octagon = styled.div`
   position: relative;
-  width: 90%;
-  padding-top: 90%;
+  width: min(100%, 360px);
+  aspect-ratio: 1 / 1.1;
   margin: 0 auto;
-  overflow: visible;
-  margin-bottom: 40px;
-  
-div {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
-  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
   overflow: hidden;
-}
+  margin-bottom: 40px;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(255, 143, 61, 0.14), rgba(255, 255, 255, 0.03));
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+
+  img {
+    object-fit: cover;
+    object-position: center top;
+  }
 
   &:before {
-    content:"";
+    content: "";
     position: absolute;
-    background-color: ${p => p.theme.color.primaryColor};
-    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-    top: 5px;
-    left: 1px;
-    right: -1px;
-    bottom: -5px;
-    overflow: hidden;
-    transition: all 0.4s ease-in-out;
+    inset: 14px;
+    border: 1px solid rgba(255, 143, 61, 0.26);
+    border-radius: 22px;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    inset: auto -12% -12% 40%;
+    height: 34%;
+    background: radial-gradient(circle, rgba(255, 143, 61, 0.22), transparent 68%);
+    filter: blur(10px);
     z-index: 0;
   }
 
-  &:hover {
-    &:before {
-      top: 15px;
-      left: 10px;
-      right: -10px;
-      bottom: -15px;
-    }
-  }
-
   ${media.greaterThan(breakpoints.small())`
-      width: 30%;
+      width: 36%;
       margin-bottom: 0;
-      padding-top: 30%;
   `}
-
-`
+`;
 
 export const Text = styled.div`
   width: 100%;
-  color: #fff;
+  color: ${(p) => p.theme.color.textPrimary};
   line-height: 1.8;
-  font-size: 16px;
-  margin-right: 30px;
+  font-size: 1rem;
+  margin-right: 0;
+
+  p {
+    margin: 0 0 18px;
+    color: ${(p) => p.theme.color.textMuted};
+    font-size: 1rem;
+  }
 
   p:first-child {
     margin-top: 0;
+    color: ${(p) => p.theme.color.textPrimary};
+    font-size: 1.18rem;
+    font-weight: 600;
   }
 
   p:last-child {
@@ -89,20 +74,37 @@ export const Text = styled.div`
   }
 
   ${media.greaterThan(breakpoints.small())`
-    width: 50%;
+    width: 56%;
+    padding-right: 12px;
+    margin-right: 30px;
   `}
-`
+`;
+
+export const SkillsList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 28px 0;
+`;
+
+export const SkillItem = styled.span`
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 143, 61, 0.22);
+  background: rgba(255, 255, 255, 0.04);
+  color: ${(p) => p.theme.color.textPrimary};
+  font-size: 0.92rem;
+  font-weight: 700;
+`;
 
 export const AboutWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 40px;
 
   ${media.greaterThan(breakpoints.small())`
-    flex-direction: row-reverse;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    gap: 56px;
   `}
-
-    @media only screen and (min-width : 992px) {
-      flex-direction: row-reverse;
-    }
-  `
+`;

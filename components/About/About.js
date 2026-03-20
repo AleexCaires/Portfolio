@@ -2,13 +2,11 @@ import React from "react";
 import Image from "next/image";
 import { Headings } from "../Headings/Headings";
 import { Container } from "../Container/Container";
-import { AboutSection, Octagon, Text, AboutWrapper } from "./About.styles";
+import { AboutSection, AboutWrapper, Octagon, SkillItem, SkillsList, Text } from "./About.styles";
 import { Links } from "../Links/Links";
 
-//const getAge = birthDate => Math.floor((new Date() - new Date(birthDate).getTime()) / 3.15576e+10)
-
 export default function About() {
-  const startYear = 2020;
+  const startYear = 2018;
   const currentYear = new Date().getFullYear();
   const experienceYears = currentYear - startYear;
 
@@ -18,22 +16,26 @@ export default function About() {
         <Headings number="1" heading="About" />
         <AboutWrapper>
           <Octagon>
-            <div style={{ backgroundImage: 'url("/portrait.jpg")' }}></div>
+            <Image src="/portrait.jpg" alt="Portrait of Alex Caires" layout="fill" />
           </Octagon>
           <Text>
+            <p>I&apos;m Alex Caires, a full-stack engineer from Madeira now based in London. I build robust digital products that balance visual polish with practical product thinking.</p>
+            <p>Over the last {experienceYears} years I&apos;ve worked across agency, freelance, and in-house teams, shipping marketing launches, CMS builds, single-page apps, and product features for retail, pharma, fintech, and service businesses.</p>
+            <p>What I enjoy most is the space where UI craft, API design, and maintainable full-stack architecture overlap. Outside of work you&apos;ll usually find me hiking, training, or riding trails.</p>
+            <SkillsList>
+              <SkillItem>React</SkillItem>
+              <SkillItem>Next.js</SkillItem>
+              <SkillItem>TypeScript</SkillItem>
+              <SkillItem>Design Systems</SkillItem>
+              <SkillItem>Accessibility</SkillItem>
+              <SkillItem>Performance</SkillItem>
+            </SkillsList>
             <p>
-              Hello, <br></br>I am Alex Caires. Originally from Madeira Island, Portugal where I studied Science and Technology to the vibrant city of London, United Kingdom where I started my career of Web development in 2018.
-            </p>
-            <p>
-              With over {experienceYears} years of experience in a wide range of sectors from agency world, pharmaceutical, retail, finTech, and many others as a freelance contractor working from web banners and email campaigns to SPA&apos;s and WPA&apos;s expanding my experience and refining my
-              knowledge in the field.
-            </p>
-            <p>I am a young and eager developer, but that is not all! I love to keep my body as active as my mind by doing exercise, hikes and mountain biking.</p>
-            <p>
-              If I sparked your interest and you would like to learn more about me or talk to me, I invite you to view my LinkedIn profile{" "}
+              If you want a fuller picture of my background, you can view my LinkedIn profile{" "}
               <Links target="_blank" href="https://www.linkedin.com/in/alex-caires-b7b39b174/" rel="noopener noreferrer">
-                here.
+                here
               </Links>
+              .
             </p>
           </Text>
         </AboutWrapper>
