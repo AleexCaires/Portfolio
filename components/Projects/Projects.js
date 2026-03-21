@@ -60,7 +60,7 @@ export default function Projects() {
       featuredImage: 'url("/InertRecycling.png")',
       tags: ["React", "Styled Components"],
       url: {
-        live: "https://www.inertrecycling.co.uk/",
+        live: "https://inertrecycling.co.uk/",
       },
     },
   ];
